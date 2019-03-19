@@ -10,6 +10,6 @@ def build_lm(data_path, model_name):
     data_lm = TextLMDataBunch.from_tokens("", trn_tok=data, trn_lbls=[0]*n_data, 
                 val_tok=[[]], val_lbls=[0])
     
-    learn = language_model_learner(data_lm, AWD_LSTM, drop_mult=0.5)
+    learn = language_model_learner(data_lm, AWD_LSTM, drop_mult=0.5, pretrained=False)
     learn.fit_one_cycle(1, 1e-2)
     learn.save(model_name)
