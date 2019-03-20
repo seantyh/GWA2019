@@ -39,9 +39,11 @@ class AnmorphWindow(QMainWindow, Ui_MainWindow):
         }
 
         for btn_x in self.button_groups.keys():
+            btn_x.setStyleSheet("background-color: #DDDDDD")
             btn_x.clicked.connect(self.on_button_toggle)
 
         self.btn_na.clicked.connect(self.on_na_button)
+        self.btn_na.setStyleSheet("background-color: #DDDDDD")
         self.btn_prev_entry.clicked.connect(self.on_prev_entry)
         self.btn_next_entry.clicked.connect(self.on_next_entry)
 
@@ -69,6 +71,7 @@ class AnmorphWindow(QMainWindow, Ui_MainWindow):
                 lab_x = self.create_new_label()
                 self.char_labels.append(lab_x)
             lab_x.setText(char_x)
+            lab_x.repaint()
 
         while len(self.char_labels) > len(word):
             lab_x = self.char_labels.pop()
@@ -116,7 +119,7 @@ class AnmorphWindow(QMainWindow, Ui_MainWindow):
         item = self.currentItem
         if not self.currentItem: return
         for btn_x, _ in self.button_groups.items():
-            btn_x.setStyleSheet("")
+            btn_x.setStyleSheet("background-color: #DDDDDD")
 
         if item.hyper_rule == 1:
             self.btn_item1_yes.click()
@@ -131,7 +134,7 @@ class AnmorphWindow(QMainWindow, Ui_MainWindow):
         if item.na_rule == 1:
             self.btn_na.click()
         else:
-            self.btn_na.setStyleSheet("")
+            self.btn_na.setStyleSheet("background-color: #DDDDDD")
 
     def update_note(self):
         item = self.currentItem
@@ -196,9 +199,9 @@ class AnmorphWindow(QMainWindow, Ui_MainWindow):
         src_idx = self.button_groups.get(src_obj, -1)
         for btn_x, idx in self.button_groups.items():
             if idx == src_idx:
-                btn_x.setStyleSheet("")
+                btn_x.setStyleSheet("background-color: #DDDDDD")
         src_obj.setStyleSheet("background-color: yellow")
-
+        
         btn_name = src_obj.objectName()
         tokens = btn_name.split("_")
         ans_map = {"yes": 1, "no": 0, "na": -1}
@@ -208,14 +211,14 @@ class AnmorphWindow(QMainWindow, Ui_MainWindow):
             item.mero_rule = ans_map.get(tokens[2], -1)
         else:
             pass        
-        self.btn_na.setStyleSheet("")
+        self.btn_na.setStyleSheet("background-color: #DDDDDD")
         item.na_rule = -1
 
     def on_na_button(self):
         item = self.currentItem
         if not self.currentItem: return
         for btn_x, _ in self.button_groups.items():
-            btn_x.setStyleSheet("")
+            btn_x.setStyleSheet("background-color: #DDDDDD")
         self.btn_na.setStyleSheet("background-color: yellow")
         self.btn_item1_na.setStyleSheet("background-color: yellow")
         self.btn_item2_na.setStyleSheet("background-color: yellow")
