@@ -1,6 +1,6 @@
 # Anmorph
 
-_An_notation on _Morph_ology
+*An*notation on *Morph*ology
 
 ## Requirement
 * Python3
@@ -18,7 +18,7 @@ git clone https://github.com/seantyh/GWA2019
 pip3 install pyside2
 ```
 
-3. prepare a wordlist (there is one in data/word_list.0.csv)
+3. prepare a wordlist (there is one in `data/word_list.0.csv`)  
 wordlist只是一個用UTF-8編碼，以斷行分隔的詞表。Anmorph讀入檔案後，會將這個詞表檔案覆蓋為一個逗號分隔的資料表。所以在這一步要先把詞表複製成另外一個檔案。
 ```
 cp word_list.0.csv word_list.csv
