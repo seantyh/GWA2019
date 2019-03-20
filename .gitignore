@@ -1,6 +1,7 @@
 .ipynb_checkpoints/
 __pycache__/
-data/
+data/*
+!data/word_list.0.csv
 models/
 
 *.swp
