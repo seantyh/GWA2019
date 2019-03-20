@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>853</width>
-    <height>632</height>
+    <width>900</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -41,7 +41,8 @@
           </property>
           <property name="font">
            <font>
-            <pointsize>16</pointsize>
+            <family>Heiti TC</family>
+            <pointsize>24</pointsize>
            </font>
           </property>
          </widget>
@@ -120,7 +121,8 @@
               </property>
               <property name="font">
                <font>
-                <pointsize>64</pointsize>
+                <family>BiauKai</family>
+                <pointsize>96</pointsize>
                </font>
               </property>
               <property name="text">
@@ -153,7 +155,8 @@
                 </property>
                 <property name="font">
                  <font>
-                  <pointsize>14</pointsize>
+                  <family>Heiti TC</family>
+                  <pointsize>24</pointsize>
                  </font>
                 </property>
                 <property name="text">
@@ -164,14 +167,14 @@
               <item>
                <widget class="QPushButton" name="btn_item1_no">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>60</width>
+                  <width>80</width>
                   <height>48</height>
                  </size>
                 </property>
@@ -180,6 +183,12 @@
                   <width>80</width>
                   <height>48</height>
                  </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Heiti TC</family>
+                  <pointsize>24</pointsize>
+                 </font>
                 </property>
                 <property name="text">
                  <string>否</string>
@@ -192,14 +201,14 @@
               <item>
                <widget class="QPushButton" name="btn_item1_na">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>60</width>
+                  <width>80</width>
                   <height>48</height>
                  </size>
                 </property>
@@ -208,6 +217,12 @@
                   <width>80</width>
                   <height>48</height>
                  </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Heiti TC</family>
+                  <pointsize>24</pointsize>
+                 </font>
                 </property>
                 <property name="text">
                  <string>？</string>
@@ -217,14 +232,14 @@
               <item>
                <widget class="QPushButton" name="btn_item1_yes">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>60</width>
+                  <width>80</width>
                   <height>48</height>
                  </size>
                 </property>
@@ -233,6 +248,12 @@
                   <width>80</width>
                   <height>48</height>
                  </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Heiti TC</family>
+                  <pointsize>24</pointsize>
+                 </font>
                 </property>
                 <property name="text">
                  <string>是</string>
@@ -259,7 +280,8 @@
                 </property>
                 <property name="font">
                  <font>
-                  <pointsize>14</pointsize>
+                  <family>Heiti TC</family>
+                  <pointsize>24</pointsize>
                  </font>
                 </property>
                 <property name="text">
@@ -269,9 +291,15 @@
               </item>
               <item>
                <widget class="QPushButton" name="btn_item2_no">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
                 <property name="minimumSize">
                  <size>
-                  <width>60</width>
+                  <width>80</width>
                   <height>48</height>
                  </size>
                 </property>
@@ -280,6 +308,12 @@
                   <width>80</width>
                   <height>48</height>
                  </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Heiti TC</family>
+                  <pointsize>24</pointsize>
+                 </font>
                 </property>
                 <property name="text">
                  <string>否</string>
@@ -288,9 +322,15 @@
               </item>
               <item>
                <widget class="QPushButton" name="btn_item2_na">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
                 <property name="minimumSize">
                  <size>
-                  <width>60</width>
+                  <width>80</width>
                   <height>48</height>
                  </size>
                 </property>
@@ -299,6 +339,12 @@
                   <width>80</width>
                   <height>48</height>
                  </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Heiti TC</family>
+                  <pointsize>24</pointsize>
+                 </font>
                 </property>
                 <property name="text">
                  <string>？</string>
@@ -307,9 +353,15 @@
               </item>
               <item>
                <widget class="QPushButton" name="btn_item2_yes">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
                 <property name="minimumSize">
                  <size>
-                  <width>60</width>
+                  <width>80</width>
                   <height>48</height>
                  </size>
                 </property>
@@ -318,6 +370,12 @@
                   <width>80</width>
                   <height>48</height>
                  </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Heiti TC</family>
+                  <pointsize>24</pointsize>
+                 </font>
                 </property>
                 <property name="text">
                  <string>是</string>
@@ -360,6 +418,12 @@
                   <width>260</width>
                   <height>16777215</height>
                  </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Heiti TC</family>
+                  <pointsize>24</pointsize>
+                 </font>
                 </property>
                 <property name="text">
                  <string>不適用</string>
@@ -406,6 +470,12 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <family>Heiti TC</family>
+            <pointsize>24</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>&lt;&lt;</string>
           </property>
@@ -425,6 +495,12 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <family>Heiti TC</family>
+            <pointsize>24</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>&gt;&gt;</string>
           </property>
@@ -441,8 +517,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>853</width>
-     <height>25</height>
+     <width>900</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>
