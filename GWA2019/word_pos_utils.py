@@ -1,6 +1,10 @@
 import json
-from . import parse_func_dummy as parse
+import logging
+from . import parse_func as parse
 from itertools import chain
+
+logger = logging.getLogger("word_pos_utils")
+logger.setLevel("DEBUG")
 
 class MOE:
     def __init__(self, fpath):
@@ -58,7 +62,7 @@ def query_char_pos(char, moe_inst):
             continue        
 
         ## check if it is a classic sense. ignore the classic sense and continue to next
-        is_classic_sense = parse.is_classic(sense_x.get("quote", ""))
+        is_classic_sense = parse.is_classic(''.join(sense_x.get("quote", "")))
         if is_classic_sense:
             continue
 
@@ -67,8 +71,13 @@ def query_char_pos(char, moe_inst):
             first_pos = sense_pos
 
         ## retrieve examplar words to calculate word frequency
-        examplar_words = parse.get_examplar_words(sense_x.get("example", ""))
+        examplar_words = parse.get_examplar_words(''.join(sense_x.get("example", "")))
         word_freqs = [parse.query_as4_freq(w) for w in examplar_words]        
+
+        logger.debug("sense def: ", sense_x.get("definition", ""))
+        logger.debug("is_classic: ", is_classic)
+        logger.debug("examplar_words: ", example_words)
+        logger.debug("word_freqs: ", word_freqs)
 
         ## store the results: examplar words frequency and increment the POS count
         pos_freq[sense_pos] += sum(word_freqs)

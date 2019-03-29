@@ -1,7 +1,7 @@
 from typing import List
 
 def is_classic(quote: List[str]) -> bool:
-    return False
+    return Fsalse
 
 def get_examplar_words(example: List[str]) -> List[str]:
     return []
