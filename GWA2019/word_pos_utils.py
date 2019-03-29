@@ -3,9 +3,6 @@ import logging
 from . import parse_func as parse
 from itertools import chain
 
-logger = logging.getLogger("word_pos_utils")
-logger.setLevel("DEBUG")
-
 class MOE:
     def __init__(self, fpath):
         self.moe_data = {}
@@ -28,8 +25,12 @@ class MOE:
         except Exception as ex:
             print(ex)
 
-    def query_senses(self, word):        
+    def query_senses(self, word):                
+
         moe_entry = self.moe_data.get(word, None)
+        if not moe_entry:
+            return {}
+            
         heteronyms = moe_entry.get("heteronyms", [])
         sense_iter = chain.from_iterable([x.get("definitions", None) for x in heteronyms])
         sense_data = [x for x in sense_iter if x]
@@ -53,6 +54,8 @@ def query_char_pos(char, moe_inst):
     pos_freq = {"N": 0, "V": 0}
     first_pos = ""
 
+    logger = logging.getLogger("word_pos_utils")
+    logger.setLevel("DEBUG")
     ## iterate over moe_senses
     for sense_x in moe_senses:
         sense_pos = sense_x["pos"]
@@ -61,8 +64,12 @@ def query_char_pos(char, moe_inst):
         if sense_pos not in ("N", "V"):
             continue        
 
-        ## check if it is a classic sense. ignore the classic sense and continue to next
+        ## check if it is a classic sense. ignore the classic sense and continue to next        
         is_classic_sense = parse.is_classic(''.join(sense_x.get("quote", "")))
+        
+        logger.debug("sense def [%s]: %s", sense_x.get("pos"), sense_x.get("definition", ""))
+        logger.debug("quote[is_classic: %s]: %s", is_classic_sense, sense_x.get("quote"))        
+
         if is_classic_sense:
             continue
 
@@ -73,11 +80,9 @@ def query_char_pos(char, moe_inst):
         ## retrieve examplar words to calculate word frequency
         examplar_words = parse.get_examplar_words(''.join(sense_x.get("example", "")))
         word_freqs = [parse.query_as4_freq(w) for w in examplar_words]        
-
-        logger.debug("sense def: ", sense_x.get("definition", ""))
-        logger.debug("is_classic: ", is_classic)
-        logger.debug("examplar_words: ", example_words)
-        logger.debug("word_freqs: ", word_freqs)
+        
+        logger.debug("examplar_words: %s", examplar_words)
+        logger.debug("word_freqs: %s", word_freqs)
 
         ## store the results: examplar words frequency and increment the POS count
         pos_freq[sense_pos] += sum(word_freqs)
